@@ -1,0 +1,14 @@
+<div id="add_comment">	
+	<% form_for :comment, :url => { :controller => 'comment', :action => 'create_interview_comment' }, :html => { :id => 'comment_form' } do |c| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Add Your Comment</legend>
+		
+		<label for="comment_comment">Comment: (HTML not supported)</label><br />
+		<%= c.text_area :comment, :size => "75x10", :value => 'Enter your comment.', :class => 'required' %><br />
+		
+		<%= c.hidden_field :interview_id, :value => @interview.id %>
+		
+		<%= submit_tag 'submit comment', :class => 'custom_button_no_float' %>
+	</fieldset>
+	<% end %>
+</div>

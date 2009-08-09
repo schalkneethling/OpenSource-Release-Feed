@@ -1,0 +1,18 @@
+<h1>Activate Feeds</h1>
+<%= render :partial => 'components/notification' %>
+<% @feeds.each do |f| %>
+	<p>Feed Requested By: <%= f.user.login %></p>
+	<p><%= link_to f.localfeed, f.localfeed %></p>	
+	<% form_tag '/cms/activate_feed' do %>
+			<fieldset class="shaded_fieldset">
+				<legend>Feedburner URL</legend>
+				<label for="feedburner">Feedburner URL:</label>
+				<%= text_field_tag 'feedburner' %>
+				
+				<label for="chicklet">Feedburner Chicklet:</label>
+				<%= text_field_tag 'chicklet' %>
+				<%= hidden_field_tag 'feed_id', f.id %>
+			</fieldset>
+			<p><%= submit_tag 'Activate Feed', :class => 'custom_button_no_float' %></p>
+		<% end %>
+<% end %>

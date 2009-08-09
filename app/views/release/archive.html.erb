@@ -1,0 +1,11 @@
+<h1>Open Source Release Archive</h1>
+<% unless @releases.empty? %>
+	<% @releases.each do |release| %>
+		<h2 class="frontpage_headings"><%= link_to release.name, :controller => 'release', :action => 'show', :permalink => release.permalink %></h2>
+		<p class="release_date_frontpage"><strong>Released On:</strong> <%= release.release_date.strftime("%m/%d/%Y") %></p>
+		<p><%= release.details %>...</p>
+	<% end %>
+	<%= will_paginate @releases %>
+<% else %>
+	<p class="note">No release notifications currently in our archive.</p>
+<% end %>

@@ -1,0 +1,12 @@
+<h1><%= @metadata.title %></h1>
+<%= render :partial => 'components/notification' %>
+<%= @metadata.content %>
+<% @resources.each do |a| %>
+	<div class="article_lead">
+		<%= image_tag '/images/article_images/' + a.photo, :size => '80x80', :alt => a.title %>
+		<h2><%= a.title %></h2>
+		<p><%= a.lead %></p>
+		<p class="read_article"><%= link_to 'Read the complete article.', :controller => 'resource', :action => 'show', :permalink => a.permalink %></p>
+	</div>
+<% end %>
+<%= will_paginate @resources %>

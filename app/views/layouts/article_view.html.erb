@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title><%= @title %>OpenSource Release Feed</title>
+		<meta name="description" content="<%= @metadata.description %>">
+		
+		<link href="/stylesheets/dist/production.min.css" media="screen" rel="stylesheet" type="text/css">
+
+<link href="/stylesheets/jquery.lightbox-0.5.css" media="screen" rel="stylesheet" type="text/css">
+		
+		<%= javascript_include_tag "jquery126" %>
+		<script src="/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="/theme/jquery.ui.all.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.scrollTo-min.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.lightbox.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.jqlang.min.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.jqlang.min.js" type="text/javascript"></script>
+		
+		<%= javascript_include_tag "superfish" %>
+		<%= javascript_include_tag "jstarget" %>
+		<%= javascript_include_tag "osrf_validate" %>
+		<%= javascript_include_tag "osrf" %>
+		
+		<%= javascript_include_tag "shCore" %>
+		<%= javascript_include_tag "shBrushCss" %>
+		<%= javascript_include_tag "shBrushJava" %>
+		<%= javascript_include_tag "shBrushJScript" %>
+		<%= javascript_include_tag "shBrushPhp" %>
+		<%= javascript_include_tag "shBrushRuby" %>
+		<%= javascript_include_tag "shBrushSql" %>
+		<%= javascript_include_tag "shBrushXml" %>
+		
+		<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAyVI23LERTqfW1man6P2iKhSUqDFlqpNlJ1JkzeaQ08Ea4qdJixTvaIP3TZFCsTUmucejsSPYh_9FUg"></script>
+		<%= javascript_include_tag "gmaps" %>
+	</head>
+	<body>
+		<div id="container">
+			<%= render "/shared/header" %>
+			<%= render "/shared/navigation" %>
+			<div id="page-body">			
+				<div id="content">
+					<%= yield %>				
+				</div>			
+				<div id="right-column">
+					<%= render :partial => '/components/osrf_tools' %>	
+					<%= render :partial => '/components/article_view_badges' %>
+					<%= render :partial => '/components/content_pages_ad' %>
+					<p><%= link_to (image_tag '/images/ads/manning.gif', :size => '250x100', :alt => 'Get 40% of selected Manning titles'), :controller => 'release', :action => 'manning' %></p>									
+				</div>
+			</div>
+		</div>
+		<script src="http://opensourcereleasefeed.uservoice.com/pages/general/widgets/tab.js?alignment=left&amp;color=62941C" type="text/javascript"></script>
+		<%= render :partial => '/components/woopra' %>
+		<script language="javascript">
+			dp.SyntaxHighlighter.ClipboardSwf = '/public/flash/clipboard.swf';
+			dp.SyntaxHighlighter.HighlightAll('code');
+		</script>
+		<a href="#logo" id="top-link">Top of Page</a>
+	</body>
+</html>

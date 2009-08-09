@@ -1,0 +1,28 @@
+<h1>Live Interviews</h1>
+<%= render :partial => 'components/notification' %>
+<table class="cms_table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% unless @interviews.empty? %>
+		<% @interviews.each do |i| %>
+		<tr>
+			<td><%= i.title %></td>
+			<td><%= link_to 'Edit', :controller => 'cms', :action => 'edit_interview', :id => i.id %></td>
+			<td><%= link_to 'Delete', :controller => 'cms', :action => 'delete_interview', :id => i.id %></td>
+		</tr>
+		<% end %>
+		<% else %>
+		<tr>
+			<td colspan="3">
+				No articles currently in draft.
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

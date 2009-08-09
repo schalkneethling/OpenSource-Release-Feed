@@ -1,0 +1,19 @@
+<h1 id="show_heading"><%= @release.name %></h1>
+<%= render :partial => '/components/intensedabate_comments_count' %>
+<ul id="release_info">
+	<li id="release_type"><strong>Release Type: </strong><%= @release.release_type %></li>
+	<li class="release_date"><strong>Release Date: </strong><%= @release.release_date %></li>
+	<li id="release_tags"><strong>Tags: </strong><%= @release.tags %></li>
+</ul>
+<%= render :partial => 'components/notification' %>
+<p class="release_submission_meta user_level_five">
+	<%= image_tag @release.user.gravatar_url, :size => '40x40', :class => 'gravatar', :alt => 'Comment by ' + @release.user.login %>Submitted By:<%= @release.user.login %>
+</p>
+<p id="release_description"><%= white_list @release.details %></p>
+<p class="download"><%= link_to 'Download', @release.download_url, :title => 'Download ' + @release.name, :rel => "external-button" %></p>
+<p class="releasenotes_button"><%= link_to 'Release Notes', @release.releasenotes_url, :title => 'Read the latest release notes', :rel => "external-button" %></p>
+<% unless @release.website.nil? %>
+	<p class="website"><%= link_to 'Project Website', @release.website, :title => 'Access the projet website.', :rel => "external-button" %></p>
+<% end %>
+<%= render :partial => '/components/outbrain' %>
+<%= render :partial => '/components/intensedabate_comments' %>

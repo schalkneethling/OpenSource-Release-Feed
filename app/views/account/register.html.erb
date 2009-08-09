@@ -1,0 +1,29 @@
+<h1>Join Open Source Release Feed Today!</h1>
+<%= error_messages_for 'new_user' %>
+<%= @content.content %>
+<% form_for :user, :html => {:id => 'register'} do |f| %>
+<fieldset class="shaded_fieldset">
+	<legend>Create Your Account</legend>
+	<label for="user_first_name">first name: (Required)</label><br />
+	<%= f.text_field :first_name, :class => 'required', :minlength => '2' %><br />
+	
+	<label for="user_last_name">last name: (Required)</label><br />
+	<%= f.text_field :last_name, :class => 'required', :minlength => '4' %><br />
+	
+	<label for="user_email_address">email address: (Required)</label><br />
+	<%= f.text_field :email_address, :class => 'required email' %><br />
+	
+	<label for="user_username">username: (Required)</label><br />
+	<%= f.text_field :username, :class => 'required', :minlength => '5' %><br />
+	
+	<label for="user_password">password: (Required)</label><br />
+	<%= f.password_field :password, :class => 'required', :minlength => '5' %><br />
+	
+	<label for="user_promo_code">promo code: (Optional)</label><br />
+	<%= f.text_field :promo_code %><br />
+	
+	<%= recaptcha_tags(:public_key => RECAPTCHA_PUBLIC_KEY) %>
+	
+	<%= submit_tag 'create account', :class => 'custom_button_no_float' %>
+</fieldset>
+<% end %>

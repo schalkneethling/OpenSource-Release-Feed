@@ -1,0 +1,58 @@
+/* NOTIFICATION */
+#notification 
+{
+	clear:both;
+	background:#cfc url(/images/icons/24-em-check.png) center left no-repeat;
+	border:5px solid #9c9;	
+	margin:.8em 0 .8em 0;
+	padding:.5em .5em .5em 28px;
+	font-size:100%;
+}
+.warning
+{
+	clear:both;
+	background:#ffb7b7 url(/images/icons/24-message-warn.gif) center left no-repeat;
+	border:5px solid #c14646;
+	margin:.8em 0 .8em 0;
+	padding:.5em .5em .5em 26px;
+	font-size:100%;
+}
+.notice
+{
+	clear:both;
+	background:#92b8e1 url(/images/icons/info.png) center left no-repeat;
+	border:5px solid #0557a7;
+	margin:.8em 0 .8em 0;
+	padding:.5em .5em .5em 35px;
+	font-size:100%;
+}
+.error
+{
+	clear:both;
+	background:#ffb7b7 url(/images/icons/24-message-warn.gif) center left no-repeat;
+	border:5px solid #c14646;
+	margin:.8em 0 .8em 0;
+	padding:.5em .5em .5em 26px;
+	font-size:100%;
+}
+#errorExplanation
+{
+	clear:both;
+	background:#ffb7b7 url(/images/icons/no_entry.png) center left no-repeat;
+	border:5px solid #c14646;
+	margin:.8em 0 .8em 0;
+	padding:.5em .5em .5em 44px;
+	font-size:100%;
+}
+#errorExplanation h2
+{
+	margin:0 0 .3em 0;
+}
+#errorExplanation p
+{
+	color:#000;
+}
+#errorExplanation ul
+{
+	list-style:none;
+}

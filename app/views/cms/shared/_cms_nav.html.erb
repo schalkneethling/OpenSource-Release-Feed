@@ -1,0 +1,68 @@
+<h2 class="cms_nav"><%= link_to 'Dashboard', :controller => 'cms', :action => 'index' %></h2>
+<div id="accordion">
+	<h2><a href="#">Content Management</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Manage Content', :controller => 'cms', :action => 'show_content' %></li>
+			<li><%= link_to 'Add New Content', :controller => 'cms', :action => 'new_content' %></li>
+		</ul>
+	</div>
+	<h2><a href="#">Manage Releases</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add New Release', :controller => 'cms', :action => 'new_release' %></li>
+			<li><%= link_to 'Manage Moderation Queue', :controller => 'cms', :action => 'release_queue' %></li>
+			<li><%= link_to 'Manage Active Releases', :controller => 'cms', :action => 'active_release_queue' %></li>
+		</ul>
+	</div>	
+	<h2><a href="#">Manage Interviews</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add New Interview', :controller => 'cms', :action => 'new_interview' %></li>
+			<li><%= link_to 'Add Draft Interview', :controller => 'cms', :action => 'new_interview_draft' %></li>
+			<li><%= link_to 'Manage Live', :controller => 'cms', :action => 'show_active_interviews' %></li>
+			<li><%= link_to 'Manage Drafts', :controller => 'cms', :action => 'show_draft_interviews' %></li>
+		</ul>
+	</div>	
+	<h2><a href="#">Manage Articles</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add New Article', :controller => 'cms', :action => 'new_article' %></li>
+			<li><%= link_to 'Add Draft Article', :controller => 'cms', :action => 'article_draft' %></li>
+			<li><%= link_to 'Manage Drafts', :controller => 'cms', :action => 'manage_article_draft_queue' %></li>
+			<li><%= link_to 'Manage Live', :controller => 'cms', :action => 'manage_article_queue' %></li>
+		</ul>
+	</div>
+	<h2><a href="#">News Management</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add News Item', :controller => 'cms', :action => 'create_news' %></li>
+			<li><%= link_to 'Manage News Items', :controller => 'cms', :action => 'show_news' %></li>
+		</ul>
+	</div>
+	<h2><a href="#">Manage Resources</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add New Resource', :controller => 'cms', :action => 'new_resource' %></li>
+		</ul>
+	</div>
+	<h2><a href="#">Manage Feeds</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Feed Queue', :controller => 'cms', :action => 'show_requested_feeds' %></li>
+		</ul>
+	</div>
+	<h2><a href="#">Manage PackageIT</a></h2>
+	<div>
+		<ul>
+			<li><%= link_to 'Add New Package', :controller => 'cms', :action => 'new_package' %></li>
+		</ul>
+	</div>
+</div>
+<h2 class="cms_nav">		
+	<% unless @current_user.blank? %>
+		<%= link_to "Logout", '/logout' %>
+	<% else %>
+		<%= link_to 'Login', '/login' %>
+	<% end %>
+</h2>

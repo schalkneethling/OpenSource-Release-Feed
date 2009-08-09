@@ -1,0 +1,19 @@
+<h1>Send Us Your Questions And Comments</h1>
+<%= render "/shared/navigation" %>
+<%= @content.content %>
+<%= error_messages_for 'feedback' %>
+<% form_for :contact, :html => {:id => 'contact'} do |c| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Send Us Your Feedback</legend>
+		<label for="contact_name">Name:</label><br />
+		<%= c.text_field :name, :class => 'required', :minlength => '2' %><br />
+		
+		<label for="contact_email">Email Address:</label><br />
+		<%= c.text_field :email, :class => 'required email' %><br />
+		
+		<label for="contact_message">Message:</label><br />
+		<%= c.text_area :message, :rows => 10, :cols => 60, :class => 'required', :minlength => '40' %><br />
+		
+		<%= submit_tag 'send your feedback', :class => 'custom_button_no_float' %>
+	</fieldset>
+<% end %>

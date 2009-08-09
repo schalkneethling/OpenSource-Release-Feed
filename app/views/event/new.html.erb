@@ -1,0 +1,24 @@
+<h1><%= @metadata.title %></h1>
+<%= render :partial => 'components/notification' %>
+<%= @metadata.content %>
+<%= error_messages_for 'event' %>
+<% form_for :event, {:id => 'newevent'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Your Event Details</legend>
+		<label for="event_headline">Event Name: (Required)</label><br />
+		<%= f.text_field :headline, :class => 'required', :size => '70' %><br />
+		
+		<label for="event_event_url">Website: (Required)</label><br />
+		<%= f.text_field :event_url, :class => 'required', :size => '70' %><br />
+		
+		<label for="event_event_date">Event Date: (Required)</label><br />
+		<%= f.text_field :event_date, :class => 'required', :size => '70' %><br />
+		
+		<label for="event_description">Description: (Required)</label><br />
+		<%= f.text_area :description, :size => "70x10", :minlength => '50' %><br />	
+		
+		<label for="event_tags">Event Tags: (Comma seperated - Required)</label><br />
+		<%= f.text_field :tags, :size => '70', :class => 'required' %><br />
+	</fieldset>
+	<%= submit_tag 'submit event', :class => 'custom_button' %>
+<% end %>

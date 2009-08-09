@@ -1,0 +1,24 @@
+<h1>Release Queue</h1>
+<%= render :partial => 'components/notification' %>
+<% unless @releases.empty? %>
+	<% @releases.each do |r| %>
+		<h2><%= r.name %></h2>
+		<%= r.details %>		
+		<ul>
+			<li><strong>Download URL: </strong><%= r.download_url %></li>
+			<li><strong>Release Notes: </strong><%= r.releasenotes_url %></li>
+			<li><strong>Website: </strong><%= r.website %></li>
+		</ul>		
+		<p><strong>Release Tags: </strong><%= r.tags %></p>
+		<p><strong>Release Type: </strong><%= r.release_type %></p>
+		<p><strong>Release Date: </strong><%= r.release_date %></p>
+		<p><strong>Permalink: </strong><%= r.permalink %></p>		
+		<ul id="cms-simple_nav">
+			<li><%= link_to 'Approve Release', :controller => 'cms', :action => 'approve_release', :id => r.id %></li>
+			<li><%= link_to 'Edit Release', :controller => 'cms', :action => 'edit_release', :id => r.id %></li>
+			<li class="delete"><%= link_to 'Remove Release', :controller => 'cms', :action => 'remove_release', :id => r.id %></li>
+		</ul>
+	<% end %>
+<% else %>
+	<p id="notification">No releases in moderation queue</p>
+<% end %>

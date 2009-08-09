@@ -1,0 +1,20 @@
+<h1>Latest Open Source News <%= @date_range %></h1>
+<%= render :partial => 'components/notification' %>
+<% if @current_user.blank? %>
+	<p class="update"><%= link_to 'Register today', '/signup' %> to request your own custom feed, submit releases, news, events and add your comments.</p>
+<% end %>
+<%= @metadata.content %>
+<% unless @newsitems.empty? %>
+	<% @newsitems.each do |item| %>
+		<h2 class="frontpage_news_headings"><%= link_to item.headline, :controller => 'news', :action => 'show', :permalink => item.permalink %></h2>		
+		<p><%= item.description %>...</p>
+		<ul class="news_meta">
+			<li class="news_added_by"><%= image_tag item.user.gravatar_url, :size => '16x16', :class => 'gravatar', :alt => 'Comment by ' + item.user.login %><%= item.user.login %></li>
+			<li class="news_tags"><%= item.tags %></li>
+			<li class="news_date"><%= item.created_at.strftime("%m/%d/%Y") %></li>
+		</ul>
+	<% end %>
+	<%= will_paginate @newsitems %>
+<% else %>
+	<p class="note">No news items currently listed.</p>
+<% end %>

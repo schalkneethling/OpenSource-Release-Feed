@@ -1,0 +1,18 @@
+<% unless flash[:notice].blank? %>
+	<div id="notification"><%= flash[:notice] %></div>
+<% end %>
+<div id="article">
+	<%= image_tag '/images/article_images/' + @article.photo, :size => '200x200', :alt => @article.title, :class => 'article_photo' %>
+	<h1><%= @article.title %></h1>
+	<%= @article.lead %>
+	<%= @article.detail %>
+	<%= render :partial => '/components/outbrain' %>
+	<%= render :partial => '/components/social_bookmarking' %>
+</div>
+
+<%= render :partial => '/comment/article_comments' %>
+<% if logged_in? %>
+	<%= render :partial => '/comment/article_comment' %>
+<% end %>
+
+<%= render :partial => '/components/related_releases' %>

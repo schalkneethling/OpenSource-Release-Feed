@@ -1,0 +1,37 @@
+<ul id="nav">
+	<li id="home"><%= link_to 'HOME', :controller => 'release', :action => 'index' %></li>
+	<% unless @current_user.blank? %>
+	<li id="add"><%= link_to 'CONTRIBUTE', :controller => 'release', :action => 'new' %>
+		<ul>
+			<li><%= link_to 'ADD RELEASE', :controller => 'release', :action => 'new' %></li>
+			<li><%= link_to 'ADD LINK', :controller => 'news', :action => 'new' %></li>
+			<li><%= link_to 'ADD EVENT', :controller => 'event', :action => 'new' %></li>
+			<li><%= link_to 'COMMUNTIY REVIEW', :controller => 'article', :action => 'community_reviews' %></li>
+			<li><%= link_to 'BOOK REVIEW', :controller => 'article', :action => 'book_reviews' %></li>
+		</ul>
+	</li>
+	<% end %>
+	<li id="view"><%= link_to 'VIEW', :controller => 'release', :action => 'new' %>
+		<ul>
+			<li><%= link_to 'RELEASE ARCHIVE', :controller => 'release', :action => 'archive' %></li>
+			<li><%= link_to 'LINKS', :controller => 'news', :action => 'index' %></li>
+			<li><%= link_to 'EVENTS', :controller => 'event', :action => 'index' %></li>
+			<li><%= link_to 'CUSTOM FEEDS', :controller => 'feed', :action => 'view_custom_feeds' %></li>
+		</ul>
+	</li>
+	<li id="read"><%= link_to 'READ', :controller => 'article', :action => 'index' %>
+		<ul>
+			<li><%= link_to 'ARTICLES', :controller => 'article', :action => 'index' %></li>
+			<li><%= link_to 'TOOLS', :controller => 'resource', :action => 'index' %></li>
+			<li><%= link_to 'INTERVIEWS', :controller => 'interview', :action => 'index' %></li>
+			<li><%= link_to 'PACKAGEIT', :controller => 'package', :action => 'index' %></li>
+		</ul>	
+	</li>
+	<li id="contact"><%= link_to 'CONTACT US', :controller => 'communication', :action => 'feedback' %></li>
+	<% unless @current_user.blank? %>
+		<li id="logout"><%= link_to "LOGOUT", logout_path %></li>
+	<% else %>
+		<li id="register"><%= link_to 'REGISTER', signup_path %></li>
+		<li id="login"><%= link_to 'LOG-IN', login_path %></li>
+	<% end %>
+</ul>

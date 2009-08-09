@@ -1,0 +1,12 @@
+<%= render :partial => 'components/notification' %>
+<div id="article">
+	<%= image_tag '/images/article_images/' + @article.photo, :size => '200x200', :alt => @article.title, :class => 'article_photo' %>
+	<h1><%= @article.title %></h1>
+	<%= render :partial => '/components/intensedabate_comments_count' %>
+	<script src="http://slashdot.org/slashdot-it.js" type="text/javascript"></script>
+	<%= @article.lead %>
+	<%= @article.detail %>
+	<%= render :partial => '/components/outbrain' %>
+	<%= render :partial => '/components/social_bookmarking' %>
+</div>
+<%= render :partial => '/components/intensedabate_comments' %>

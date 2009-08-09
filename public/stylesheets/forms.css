@@ -1,0 +1,93 @@
+#sae_login
+{
+	position:relative;
+	float:left;
+	background-color:#415a68;
+	color:#fff;
+	border-right:1px solid #fff;
+}
+#cse-search-box
+{
+	margin:0;
+	padding:0;
+	width:250px;
+}
+#openid_login
+{
+	position:relative;
+	float:left;
+	background-color:#edecec;
+	color:#000;	
+}
+form
+{
+	margin-top:.5em;
+	padding:.5em;
+}
+input, select
+{
+	margin:.5em;
+	padding:.2em;
+}
+fieldset
+{
+	border:1px solid #415a68;
+	margin-bottom:.7em;
+	padding:.5em;
+}
+legend
+{
+	background-color:#62941C;
+	color:#fff;
+	padding:.5em;
+	letter-spacing:1px;
+	font-weight:bold;
+}
+.outbrain-recommendationsFieldset legend, .outbrain-recommendationsFieldset-sc legend, .outbrain-recommendationsFieldset-ie legend
+{
+	background-color:#330;
+}
+label
+{
+	font-weight:bold;
+	color:#333;
+}
+.custom_button
+{
+	float:right;
+	margin-right:0;
+	padding:.5em;
+	border:solid 2px #0557a7;  
+    background:#eff5ff;  
+    color:#000;
+}
+.custom_button_no_float
+{
+	margin-left:0;
+	padding:.5em;
+	border:solid 2px #0557a7;  
+    background:#eff5ff;  
+    color:#000;
+	font-weight:bold;
+}
+.shaded_fieldset
+{
+	background-color:#edecec;
+}
+.forme_longdesc
+{
+	font-size:100%;
+}
+.focusField
+{  
+    border:solid 2px #73a6ff;  
+    background:#eff5ff;  
+    color:#000;
+	outline:none;  
+}  
+.idleField
+{  
+    background:#fff;  
+    color: #6f6f6f;  
+    border: solid 2px #dfdfdf;  
+}

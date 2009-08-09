@@ -1,0 +1,15 @@
+<h1>Latest Open Source Releases <%= @date_range %></h1>
+<%= render :partial => 'components/notification' %>
+<% if @current_user.blank? %>
+	<p class="update"><%= link_to 'Register today', signup_path %> to request your own custom feed, submit releases, events, news and more.</p>
+<% end %>
+<% unless @releases.empty? %>
+	<% @releases.each do |release| %>
+		<h2 class="frontpage_headings"><%= link_to release.name, :controller => 'release', :action => 'show', :permalink => release.permalink %></h2>
+		<p class="release_date_frontpage"><strong>Released On:</strong> <%= release.release_date.strftime("%m/%d/%Y") %></p>
+		<p><%= release.details %>...</p>
+	<% end %>
+	<%= will_paginate @releases %>
+<% else %>
+	<p class="note">No current release notifications.</p>
+<% end %>

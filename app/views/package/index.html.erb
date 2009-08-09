@@ -1,0 +1,14 @@
+<h1><%= @metadata.title %></h1>
+<% unless flash[:notice].blank? %>
+	<div id="notification"><%= flash[:notice] %></div>
+<% end %>
+<%= @metadata.content %>
+<% @packages.each do |p| %>
+	<div class="article_lead">
+		<%= image_tag '/images/article_images/' + p.logo, :size => '80x80', :alt => p.title %>
+		<h2><%= p.title %></h2>
+		<p><%= p.lead %></p>
+		<p class="view_download"><%= link_to 'View details and download', :controller => 'package', :action => 'show', :permalink => p.permalink %></p>
+	</div>
+<% end %>
+<%= will_paginate @packages %>

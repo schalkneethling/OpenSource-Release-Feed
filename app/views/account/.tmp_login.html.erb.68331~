@@ -1,0 +1,23 @@
+<h1>Account Login</h1>
+<% unless flash[:notice].blank? %>
+	<div id="notification"><%= flash[:notice] %></div>
+<% end %>
+<% unless flash[:warning].blank? %>
+	<div class="important_message"><%= flash[:warning] %></div>
+<% end %>
+<%= render "/shared/navigation" %>
+<%= error_messages_for 'current_user' %>
+<p><%= @content.content %></p>
+<% form_tag({}, {:id => 'login'}) do %>
+	<fieldset class="shaded_fieldset">
+		<legend>Standard Login</legend>
+		<label for="username">username:</label><br />
+		<%= text_field_tag 'username', nil, :class => 'required', :size => '35' %><br />
+		
+		<label for="password">password:</label><br />
+		<%= password_field_tag 'password', nil, :class => 'required', :size => '35' %><br />
+		
+		<%= submit_tag 'authenticate', :class => 'custom_button_no_float' %>
+	</fieldset>
+	<p class="help">Did you forget your password? <%= link_to 'Let us help you find it.', :controller => 'account', :action => 'password_reminder' %></p>
+<% end %>

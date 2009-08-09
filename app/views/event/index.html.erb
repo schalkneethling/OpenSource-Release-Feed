@@ -1,0 +1,20 @@
+<h1><%= @metadata.title %></h1>
+<%= render :partial => 'components/notification' %>
+<% if @current_user.blank? %>
+	<p class="update"><%= link_to 'Register today', '/signup' %> to request your own custom feed, submit releases, news, events and add your comments.</p>
+<% end %>
+<%= @metadata.content %>
+<% unless @events.empty? %>
+	<% @events.each do |event| %>
+		<h2 class="frontpage_news_headings"><%= link_to event.headline, :controller => 'event', :action => 'show', :permalink => event.permalink %></h2>		
+		<p><%= event.description %>...</p>
+		<ul class="event_meta">
+			<li class="event_added_by"><%= image_tag event.user.gravatar_url, :size => '16x16', :class => 'gravatar', :alt => 'Event added by ' + event.user.login %><%= event.user.login %></li>
+			<li class="event_tags"><%= event.tags %></li>
+			<li class="event_date"><%= event.event_date.strftime("%m/%d/%Y") %></li>
+		</ul>
+	<% end %>
+	<%= will_paginate @events %>
+<% else %>
+	<p class="note">No news items currently listed.</p>
+<% end %>

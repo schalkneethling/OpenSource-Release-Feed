@@ -1,0 +1,32 @@
+<h1>Events</h1>
+<%= render :partial => 'components/notification' %>
+<table class="cms_table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Status</th>
+			<th>Approve</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% unless @events.empty? %>
+		<% @events.each do |e| %>
+		<tr>
+			<td><%= e.headline %></td>
+			<td><%= e.status %></td>
+			<td><%= link_to 'Approve', :controller => 'cms', :action => 'approve_event', :id => e.id %></td>
+			<td><%= link_to 'Edit', :controller => 'cms', :action => 'edit_event', :id => e.id %></td>
+			<td><%= link_to 'Delete', :controller => 'cms', :action => 'delete_event', :id => e.id %></td>
+		</tr>
+		<% end %>
+		<% else %>
+		<tr>
+			<td colspan="5">
+				No events found.
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

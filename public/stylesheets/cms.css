@@ -1,0 +1,41 @@
+#cms_navigation
+{
+	position:relative;
+	float:left;
+	padding-right:3%;
+	width:20%;
+}
+#cms_navigation h2
+{
+	background-color:#666;
+	padding:.5em;
+	color:#fff;
+	font-size:120%;
+}
+#cms_content
+{
+	position:relative;
+	float:left;
+	width:77%;
+}
+.cms_nav li a:link, .cms_nav li a:visited
+{
+	display:block;
+	background-color:#003;
+	color:#fff;
+	padding:.5em;
+	border-bottom:1px solid #fff;
+	line-height:140%;
+	font-size:100%;
+	text-decoration:none;
+}
+.cms_nav li a:hover, .cms_nav li a:focus
+{
+	display:block;
+	background-color:#62941C;
+	color:#fff;
+	padding:.5em;
+	border-bottom:1px solid #fff;
+	line-height:140%;
+	text-decoration:none;
+}

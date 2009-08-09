@@ -1,0 +1,10 @@
+<h3>Related Open Source Releases</h3>
+<% unless @releases.empty? %>
+	<% @releases.each do |release| %>
+		<h2 class="frontpage_headings"><%= link_to release.name, :controller => 'release', :action => 'show', :permalink => release.permalink %></h2>
+		<p class="release_date_frontpage"><strong>Released On:</strong> <%= release.release_date %></p>
+		<p><%= release.details %>...</p>
+	<% end %>
+<% else %>
+	<p class="note">No releases found for the tag <%= @article.tag %>.</p>
+<% end %>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>OpenSource Release Feed CMS</title>
+		
+		<link href="/stylesheets/cms/reset.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/base.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/layout.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/navigation.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/forms.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/notification.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/stylesheets/cms/theme/ui.all.css" media="screen" rel="stylesheet" type="text/css">
+			
+		<script type="text/javascript" src="/javascripts/cms/theme/jquery-1.2.6.min.js"></script> 
+		<script type="text/javascript" src="/javascripts/cms/theme/jquery-ui-1.5.3.custom.min.js"></script>
+		<%= javascript_include_tag "/javascripts/cms/cms" %>
+	</head>
+	<body>
+		<div id="container">
+			<%= render "/shared/header" %>			
+			<div id="page-body">
+				<div id="cms_navigation">
+					<%= render :partial => '/cms/shared/cms_nav' %>
+				</div>						
+				<div id="cms_content">					
+					<%= yield %>				
+				</div>
+			</div>
+		</div>
+		<%= javascript_include_tag "wmd/wmd" %>
+	</body>
+</html>

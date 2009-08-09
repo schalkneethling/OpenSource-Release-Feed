@@ -1,0 +1,72 @@
+<div id="osrf_tools">
+	<%= image_tag "/images/icons/compass.png", :size => "71X71", :alt => "Compass", :class => 'tool_icon' %>
+	<h2><a href="#top">Release Feed Tools</a></h2>
+	<div id="tools">
+		<h3 class="tool_heading">&#187; Search</h3>
+		<div class="tool_box">
+			<form action="http://www.opensourcereleasefeed.com/search/" id="cse-search-box">
+			  <div>
+			    <input type="hidden" name="cx" value="partner-pub-3159119841832082:n13y08vp9gg" />
+			    <input type="hidden" name="cof" value="FORID:9" />
+			    <input type="hidden" name="ie" value="ISO-8859-1" />
+			    <input type="text" name="q" size="20" />
+			    <input type="submit" name="sa" value="Search" />
+			  </div>
+			</form>	
+			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+		</div>
+		<h3 class="tool_heading">&#187; RSS Feeds</h3>
+		<div class="tool_box">
+			<strong>Master Feed</strong><br />
+			<a href="http://feeds.feedburner.com/opensourcereleasefeed"><img src="http://feeds.feedburner.com/~fc/opensourcereleasefeed?bg=2C3033&amp;fg=ffffff&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+			<%= link_to (image_tag "/images/icons/ico-google.png", :size => "61x17", :alt => "Add feed to Google", :class => 'rss-readers'), "http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/opensourcereleasefeed", :title => 'Add feed to Google' %>
+			<%= link_to (image_tag "/images/icons/ico-myy.png", :size => "84x17", :alt => "Add feed to Yahoo!", :class => 'rss-readers'), "http://add.my.yahoo.com/rss?url=http://feeds.feedburner.com/opensourcereleasefeed", :title => 'Add feed to Yahoo!' %>
+			<ul class="tool_list">
+				<li><%= link_to '&#187; all feeds', :controller => 'feed', :action => 'all_feeds' %></li>
+				<li><%= link_to '&#187; custom feeds', :controller => 'feed', :action => 'view_custom_feeds' %></li>
+			</ul>
+		</div>
+		<h3 class="tool_heading">&#187; Updates Via Email</h3>
+		<div class="tool_box">
+			<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=opensourcereleasefeed', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+				<label for="email">Enter your email address:</label><br />
+				<input type="text" name="email" id="email" /><br />
+				<input type="hidden" value="opensourcereleasefeed" name="uri"/>
+				<input type="hidden" name="loc" value="en_US"/>
+				<input type="submit" value="Subscribe" />
+				<p>Delivered by <a href="http://feedburner.google.com" target="_blank">FeedBurner</a></p>
+			</form>
+		</div>
+		<h3 class="tool_heading">&#187; Interact</h3>
+		<div class="tool_box">
+			<ul class="tool_list_right">
+				<li><%= link_to '&#187; Submit A Release', :controller => 'release', :action => 'new' %></li>
+				<li><%= link_to '&#187; Submit News', :controller => 'news', :action => 'new' %></li>
+				<li><%= link_to '&#187; Submit An Event', :controller => 'event', :action => 'new' %></li>
+			</ul>
+		</div>
+		<h3 class="tool_heading">&#187; The Monthly Roundup</h3>
+		<div class="tool_box">
+			<script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
+			<script type="text/javascript">
+				var z7x4m1 = new WufooForm();
+				z7x4m1.initialize({
+				'userName':'ossreleasefeed', 
+				'formHash':'z7x4m1', 
+				'autoResize':true,
+				'height':'267'});
+				z7x4m1.display();
+			</script>
+		</div>
+		<h3 class="tool_heading">&#187; Our Users</h3>
+		<div class="tool_box">
+			<% unless @users.empty? %>
+				<% @users.each do |u| %>
+					<%= image_tag u.gravatar_url, :size => '20x20', :class => 'gravatar', :alt => u.login %>
+				<% end %>
+			<% else %>
+			No users currently registered.
+			<% end %>
+		</div>
+	</div>
+</div>

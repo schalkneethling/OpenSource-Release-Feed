@@ -1,0 +1,100 @@
+--- !ditz.rubyforge.org,2008-03-06/project 
+name: Gravtastic
+version: "0.2"
+components: 
+- !ditz.rubyforge.org,2008-03-06/component 
+  name: Gravtastic
+releases: 
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.0.0
+  status: :released
+  release_time: 2008-06-09 00:37:24.900782 Z
+  log_events: 
+  - - 2008-06-09 00:37:13.067055 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - Incomplete first release.
+  - - 2008-06-09 00:37:24.900806 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - ""
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.5.0
+  status: :released
+  release_time: 2008-06-12 00:59:34.157075 Z
+  log_events: 
+  - - 2008-06-09 00:38:37.051970 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - Feature complete initial release.
+  - - 2008-06-12 00:59:34.157089 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - Working nicely now!
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.1.0
+  status: :released
+  release_time: 2008-06-09 07:00:13.551443 Z
+  log_events: 
+  - - 2008-06-09 06:58:33.486213 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - ""
+  - - 2008-06-09 07:00:13.551469 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - Nice, all working!
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.1.1
+  status: :released
+  release_time: 2008-06-10 04:27:05.332869 Z
+  log_events: 
+  - - 2008-06-10 02:43:07.117035 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - Fixes URL problems.
+  - - 2008-06-10 04:27:05.332882 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - |-
+      Nice, fully working publicly available gem! Sweet.
+      Gravtastic now matches all the specs on http://en.gravatar.com/site/implement/url
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.1.2
+  status: :released
+  release_time: 2008-06-10 12:43:45.036425 Z
+  log_events: 
+  - - 2008-06-10 12:35:55.678243 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - ""
+  - - 2008-06-10 12:43:45.036438 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - ""
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.5.1
+  status: :released
+  release_time: 2008-06-12 04:00:41.423247 Z
+  log_events: 
+  - - 2008-06-12 03:36:16.749732 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - Bug fixes.
+  - - 2008-06-12 04:00:41.423260 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - ""
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 1.5.2
+  status: :released
+  release_time: 2008-06-15 01:44:37.017840 Z
+  log_events: 
+  - - 2008-06-15 01:44:25.681341 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - created
+    - Now with Rubyforge support!
+  - - 2008-06-15 01:44:37.017854 Z
+    - Chris Lloyd <christopher.lloyd@gmail.com>
+    - released
+    - Accepted!

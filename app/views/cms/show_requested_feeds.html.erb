@@ -1,0 +1,10 @@
+<h1>Requested Feeds</h1>
+<%= render :partial => 'components/notification' %>
+<% @feeds.each do |f| %>
+	<p>Feed Requested By: <%= f.user.login %></p>
+	<ul class="plain_list">
+		<li>Tags: <%= f.tags %></li>
+		<li>Release Types: <%= f.release_types %></li>
+	</ul>
+	<p><%= link_to 'Generate Feed', :controller => 'feed', :action => 'generate_feed', :id => f.id %> : <%= link_to 'Reject Feed', :controller => 'feed', :action => 'remove_requested_feed', :id => f.id %></p>
+<% end %>

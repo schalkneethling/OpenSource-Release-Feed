@@ -1,0 +1,36 @@
+<p><%= link_to 'Administration Home', :controller => 'cms', :action => 'index' %></p>
+<h2>General Site Management</h2>
+<ul id="cms_general_nav">
+	<li><%= link_to 'Manage Content', :controller => 'cms', :action => 'show_content' %></li>
+	<li><%= link_to 'Add New Content', :controller => 'cms', :action => 'new_content' %></li>
+</ul>
+<h2>Manage Releases</h2>
+<ul id="cms_release_nav">
+	<li><%= link_to 'Add New Release', :controller => 'release', :action => 'new' %></li>
+	<li><%= link_to 'Manage Moderation Queue', :controller => 'cms', :action => 'release_queue' %></li>
+</ul>
+
+<h2>Manage Interviews</h2>
+<ul id="cms_interview_nav">
+	<li><%= link_to 'Add New Interview', :controller => 'cms', :action => 'new_interview' %></li>
+</ul>
+
+<h2>Manage Articles</h2>
+<ul id="cms_article_nav">
+	<li><%= link_to 'Add New Article', :controller => 'cms', :action => 'new_article' %></li>
+</ul>
+
+<h2>Manage Resources</h2>
+<ul id="cms_resoure_nav">
+	<li><%= link_to 'Add New Resource', :controller => 'cms', :action => 'new_resource' %></li>
+</ul>
+
+<h2>Manage Feeds</h2>
+<ul id="cms_resoure_nav">
+	<li><%= link_to 'Feed Queue', :controller => 'cms', :action => 'show_requested_feeds' %></li>
+</ul>
+
+<h2>Manage PackageIT</h2>
+<ul id="cms_resoure_nav">
+	<li><%= link_to 'Add New Package', :controller => 'cms', :action => 'new_package' %></li>
+</ul>

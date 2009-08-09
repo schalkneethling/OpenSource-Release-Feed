@@ -1,0 +1,14 @@
+<%= render :partial => 'components/notification' %>
+<div id="article">
+	<%= image_tag '/images/article_images/' + @article.photo, :size => '200x200', :alt => @article.title, :class => 'article_photo' %>
+	<h1><%= @article.title %></h1>
+	<script src="http://slashdot.org/slashdot-it.js" type="text/javascript"></script>
+	<%= @article.lead %>
+	<%= @article.detail %>
+	<p><strong>Permalink:</strong> <%= @article.permalink %></p>
+</div>
+<ul id="cms-simple_nav">
+	<li><%= link_to 'Edit Article', :controller => 'cms', :action => 'edit_article', :id => @article.id %></li>
+	<li><%= link_to 'Approve Article', :controller => 'cms', :action => 'update_article_status', :id => @article.id, :status => 'active' %></li>
+	<li><%= link_to 'Save As Draft', :controller => 'cms', :action => 'update_article_status', :id => @article.id, :status => 'draft' %></li>
+</ul>

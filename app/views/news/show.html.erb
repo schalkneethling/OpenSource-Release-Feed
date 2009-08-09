@@ -1,0 +1,15 @@
+<h1 id="show_heading"><%= link_to @news.headline, @news.news_url %></h1>
+<%= render :partial => '/components/intensedabate_comments_count' %>
+<% if @current_user.blank? %>
+	<p class="update"><%= link_to 'Register today', '/signup' %> to request your own custom feed, submit releases and more.</p>
+<% end %>
+<p class="news_submission_meta user_level_five">
+	<%= image_tag @news.user.gravatar_url, :size => '40x40', :class => 'gravatar', :alt => 'Comment by ' + @news.user.login %>Submitted By:<%= @news.user.login %>
+</p>
+<p><%= @news.description %></p>
+<ul class="news_meta">
+	<li class="news_tags"><%= @news.tags %></li>
+	<li class="news_date"><%= @news.created_at.strftime("%m/%d/%Y") %></li>
+</ul>
+<%= render :partial => '/components/outbrain' %>
+<%= render :partial => '/components/intensedabate_comments' %>

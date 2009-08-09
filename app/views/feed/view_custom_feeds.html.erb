@@ -1,0 +1,19 @@
+<h1>Community Requested Feeds</h1>
+<p><%= @metadata.content %></p>
+<% unless @current_user.blank? %>
+	<%= render :partial => '/components/custom_feedburner_page' %>
+<% else %>
+	<p class="update">Want to request a custom feed of your own? <%= link_to 'Log in (OpenID Support)', '/login' %> or <%= link_to 'register for your free account', '/signup' %> and request your custom feed.</p>
+<% end %>
+<h2 class="primary clear_all">Grab A Custom Feed</h2>
+<% unless @community_feeds.empty? %>
+	<% @community_feeds.each do |c| %>
+		<div class="cust_feed">
+			<p><strong class="primary">Feed Requested By:</strong> <%= c.user.login %></p>
+			<p><strong class="secondary">Feed Description:</strong> This feed includes the following tag(s): <%= c.tags.gsub(/\s/, ', ') %> and the following release types: <%= c.release_types.gsub(/\s/, ', ') %></p>
+			<p><%= link_to (image_tag c.chicklet, :size => '88x26', :alt => 'Subscribe to this feed'), c.feedburner %><%= link_to (image_tag "/images/icons/ico-google.png", :size => "61x17", :alt => "Add feed to Google", :class => 'rss-readers'), "http://fusion.google.com/add?feedurl=" + c.feedburner, :title => 'Add feed to Google' %><%= link_to (image_tag "/images/icons/ico-myy.png", :size => "84x17", :alt => "Add feed to Yahoo!", :class => 'rss-readers'), "http://add.my.yahoo.com/rss?url=" + c.feedburner, :title => 'Add feed to Yahoo!' %></p>			
+		</div>
+	<% end %>
+<% else %>
+	<p class="update">No custom community feeds yet activated.</p>
+<% end %>

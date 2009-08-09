@@ -1,0 +1,14 @@
+<%= render :partial => 'components/notification' %>
+<div id="package">
+	<%= image_tag '/images/article_images/' + @package.logo, :size => '200x200', :alt => @package.title, :class => 'article_photo' %>
+	<h1><%= @package.title %></h1>
+	<%= render :partial => '/components/intensedabate_comments_count' %>
+	<script src="http://slashdot.org/slashdot-it.js" type="text/javascript"></script>
+	<%= @package.lead %>
+	<%= @package.detail %>
+	<p class="download_link"><%= link_to 'Download ' + @package.title, @package.download %></p>
+	<%= render :partial => '/components/outbrain' %>
+	<%= render :partial => '/components/social_bookmarking' %>
+</div>
+<%= render :partial => '/components/intensedabate_comments' %>
+<%= render :partial => '/components/related_releases' %>

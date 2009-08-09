@@ -1,0 +1,26 @@
+<h1>Add A New Draft Interview</h1>
+<%= render :partial => 'components/notification' %>
+<%= error_messages_for 'interview' %>
+<% form_for :interview, :html => { :multipart => true, :id => 'newinterview'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Interview Details</legend>
+		<label for="interview_name">Name: (Required)</label><br />
+		<%= f.text_field :name, :class => 'required', :size => '70' %><br />
+		
+		<label for="interview_title">Title: (Required)</label><br />
+		<%= f.text_field :title, :class => 'required', :size => '70' %><br />
+		
+		<label for="interview_lead">Interview Lead: (Required)</label><br />
+		<%= f.text_area :lead, :class => 'required', :size => '70x5' %><br />
+		
+		<label for="interview_interview">Interview: (Required)</label><br />
+		<%= f.text_area :interview, :size => "70x10", :minlength => '50' %><br />
+		
+		<label for="interview_tag">Interview Tag: (Required)</label><br />
+		<%= f.text_field :tag, :class => 'required', :size => '70' %><br />
+		
+		<label for="interview_photo">Photo: (Required)</label><br />
+		<%= f.file_field :photo %><br />
+	</fieldset>
+	<%= submit_tag 'submit interview', :class => 'custom_button' %>
+<% end %>

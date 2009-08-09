@@ -1,0 +1,26 @@
+<h1>Manage Content</h1>
+<%= render :partial => 'components/notification' %>
+<table class="cms_table">
+	<thead>
+		<tr>
+			<th>Heading</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% unless @metadata.empty? %>
+			<% @metadata.each do |m| %>
+				<tr>
+					<td><%= m.title %></td>
+					<td><%= link_to 'Edit', :controller => 'cms', :action => 'edit_content', :id => m.id %></td>
+					<td><%= link_to 'Delete', :controller => 'cms', :action => 'delete_content', :id => m.id %></td>
+				</tr>
+			<% end %>
+		<% else %>
+			<tr>
+				<td colspan="2" class="update">No content to display.</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

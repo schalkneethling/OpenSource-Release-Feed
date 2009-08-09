@@ -1,0 +1,20 @@
+<h1>Submit A New News Item</h1>
+<%= render :partial => 'components/notification' %>
+<%= error_messages_for 'release' %>
+<% form_for :news, {:id => 'newnewsitem'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Your Link Details</legend>
+		<label for="news_headline">Heading: (Required)</label><br />
+		<%= f.text_field :headline, :class => 'required', :size => '70' %><br />
+		
+		<label for="news_news_url">URL: (Required)</label><br />
+		<%= f.text_field :news_url, :class => 'required', :size => '70' %><br />
+		
+		<label for="news_description">Description: (Required)</label><br />
+		<%= f.text_area :description, :size => "70x10" %><br />		
+		
+		<label for="news_tags">News Tags: (Comma seperated - Required)</label><br />
+		<%= f.text_field :tags, :size => '70', :class => 'required' %><br />
+		<%= submit_tag 'submit news', :class => 'custom_button' %>
+	</fieldset>
+<% end %>

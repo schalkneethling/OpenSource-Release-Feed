@@ -1,0 +1,18 @@
+<h1>Verify Your Account</h1>
+<% unless @user.nil? %>
+	<% form_tag do %>
+		<fieldset>
+			<legend>Enter your password to verify your account</legend>
+			<label for="username">username:</label><br />
+			<%= text_field_tag 'username', @user.username %><br />
+			
+			<label for="password">password:</label><br />
+			<%= password_field_tag 'password' %><br />
+			
+			<%= submit_tag 'verify' %>
+		</fieldset>
+	<% end %>
+<% else %>
+	<p>An account with an email address matching yours could not be found. If you believe this to be incorrect please <%= link_to 'contact us', :controller => 'communication', :action => 'feedback' %> and send us the information you registered with.</p>
+	<p>If you are unsure then please go ahead and <%= link_to 'register again', :controller => 'account', :action => 'register' %>. Thank you.</p>
+<% end %>

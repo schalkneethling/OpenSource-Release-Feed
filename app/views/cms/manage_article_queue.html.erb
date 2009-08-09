@@ -1,0 +1,28 @@
+<h1>Manage Article Queue</h1>
+<%= render :partial => 'components/notification' %>
+<table class="cms_table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% unless @articles.empty? %>
+		<% @articles.each do |a| %>
+		<tr>
+			<td><%= a.title %></td>
+			<td><%= link_to 'Edit', :controller => 'cms', :action => 'edit_article', :id => a.id %></td>
+			<td><%= link_to 'Delete', :controller => 'cms', :action => 'delete_article', :id => a.id %></td>
+		</tr>
+		<% end %>
+		<% else %>
+		<tr>
+			<td colspan="3">
+				No articles in database.
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

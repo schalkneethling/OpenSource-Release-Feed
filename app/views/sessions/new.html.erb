@@ -1,0 +1,24 @@
+<h1>Account Login</h1>
+<%= @metadata.content %>
+<%= render :partial => 'components/notification' %>
+<% form_tag session_path do -%>
+<fieldset class="shaded_fieldset">
+	<legend>Standard Login</legend>
+		<%= label_tag 'login' %><br />
+		<%= text_field_tag 'login', @login, :class => 'required', :size => '35' %><br />
+		
+		<%= label_tag 'password' %><br/>
+		<%= password_field_tag 'password', nil, :class => 'required', :size => '35' %><br />
+		
+		<%= label_tag 'remember_me', 'Remember me' %>
+		<%= check_box_tag 'remember_me', '1', @remember_me %>
+</fieldset>
+<p>or use...</p>
+<fieldset class="shaded_fieldset">
+	<legend>OpenID</legend>		
+		<label for="openid_url">OpenID URL</label><br />
+		<%= text_field_tag 'openid_url', nil, :class => 'required', :size => '35' %><br />
+</fieldset>
+<%= submit_tag 'authenticate', :class => 'custom_button_no_float' %>
+<p class="help">Did you forget your password? <%= link_to 'Let us help you find it.', :controller => 'account', :action => 'password_reminder' %></p>
+<% end -%>

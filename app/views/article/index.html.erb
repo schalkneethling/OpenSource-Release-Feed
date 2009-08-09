@@ -1,0 +1,12 @@
+<h1>OpenSource Release Feed Article Series</h1>
+<%= render :partial => 'components/notification' %>
+<%= @metadata.content %>
+<% @articles.each do |a| %>
+	<div class="article_lead">
+		<%= image_tag '/images/article_images/' + a.photo, :size => '80x80', :alt => a.title %>
+		<h2><%= a.title %></h2>
+		<p><%= a.lead %></p>
+		<p class="read_article"><%= link_to 'Read the complete article.', :controller => 'article', :action => 'show', :permalink => a.permalink %></p>
+	</div>
+<% end %>
+<%= will_paginate @articles %>

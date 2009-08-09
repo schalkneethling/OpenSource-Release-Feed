@@ -1,0 +1,24 @@
+<% get_tags %>
+<% get_release_types %>
+<div id="custom_feeds">
+	<%= image_tag "/images/icons/blue_rss.png", :size => "71X71", :alt => "RSS Feed Icons", :class => 'feed_icon' %>
+	<h3><a href="#custom_feeds">REQUEST A FEED</a></h3>
+	<div id="osrf_feedburner">
+		<%= error_messages_for 'feed' %>
+		<% form_tag '/feed/request_feed' do %>
+			<fieldset class="shaded_fieldset">
+				<legend>Select Tags</legend>
+				<% @tags.each do |t| %>
+					<%= check_box_tag "selected_tags[]", t.tag %><label for=<%= '"feed_' + t.tag + '"'  %>><%= t.tag %></label><br />
+				<% end %>			
+			</fieldset>
+			<fieldset class="shaded_fieldset">
+				<legend>Select Types</legend>
+				<% @releasetypes.each do |r| %>
+					<%= check_box_tag "release_types[]", r.release_type %><label for=<%= '"feed_' + r.release_type + '"'  %>><%= r.release_type %></label><br />
+				<% end %>			
+			</fieldset>
+			<p><%= submit_tag 'Request Feed', :class => 'custom_button_no_float' %></p>
+		<% end %>
+	</div>
+</div>

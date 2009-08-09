@@ -1,0 +1,23 @@
+<h1>Add A New Resource</h1>
+<%= render :partial => 'components/notification' %>
+<%= error_messages_for 'resource' %>
+<% form_for :resource, :html => { :multipart => true, :id => 'newarticle'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Resource Details</legend>
+		<label for="resource_title">Title: (Required)</label><br />
+		<%= f.text_field :title, :class => 'required', :size => '70' %><br />
+		
+		<label for="resource_lead">Resource Lead: (Required)</label><br />
+		<%= f.text_area :lead, :class => 'required', :size => '70x5' %><br />
+		
+		<label for="resource_detail">Resource: (Required)</label><br />
+		<%= f.text_area :detail, :size => "70x10", :minlength => '50' %><br />
+		
+		<label for="resource_tag">Resource Tag: (Required)</label><br />
+		<%= f.text_field :tag, :class => 'required', :size => '70' %><br />
+		
+		<label for="resource_photo">Photo: (Required)</label><br />
+		<%= f.file_field :photo %><br />
+		<%= submit_tag 'submit resource', :class => 'custom_button' %>
+	</fieldset>
+<% end %>

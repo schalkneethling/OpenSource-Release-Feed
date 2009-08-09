@@ -1,0 +1,13 @@
+<h1><%= @metadata.title %></h1>
+<p class="update"><%= @upcoming_interviews.content %></p>
+<%= render :partial => 'components/notification' %>
+<%= @metadata.content %>
+<% @interviews.each do |i| %>
+	<div class="interview_lead">
+		<%= image_tag '/images/photos/' + i.photo, :size => '80x80', :alt => 'Photo of ' + i.name %>
+		<h2><%= i.title %></h2>
+		<p><%= i.lead %></p>
+		<p class="read_interview"><%= link_to 'Read the full interview with ' + i.name, :controller => 'interview', :action => 'show', :permalink => i.permalink %></p>
+	</div>
+<% end %>
+<%= will_paginate @interviews %>

@@ -1,0 +1,12 @@
+<div id="comments">
+<% unless @interview_comments.empty? %>
+	<h3 id="comment_heading">Comments</h3>
+	<% @interview_comments.each do |comment| %>
+		<div class="current_comment">
+			<p class="comment_by"><%= image_tag comment.user.gravatar_url, :size => '40x40', :class => 'gravatar', :alt => 'Comment by ' + comment.name %></p>	
+			<p class="comment"><%= comment.comment %></p>
+			<p class="comment_at"><strong>Posted At:</strong> <%= comment.created_at.strftime("%m/%d/%Y") %></p>
+		</div>
+	<% end %>
+<% end %>
+</div>

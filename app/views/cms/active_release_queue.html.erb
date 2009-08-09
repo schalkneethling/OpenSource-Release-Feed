@@ -1,0 +1,27 @@
+<h1>Release Queue</h1>
+<%= render :partial => 'components/notification' %>
+<%= will_paginate @releases %>
+<table class="cms_table">
+	<thead>
+		<tr>
+			<th>Release</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% unless @releases.empty? %>
+			<% @releases.each do |r| %>
+				<tr>
+					<td><%= r.name %></td>
+					<td><%= link_to 'Edit', :controller => 'cms', :action => 'edit_release', :id => r.id %></td>
+					<td><%= link_to 'Delete', :controller => 'cms', :action => 'remove_release', :id => r.id %></td>
+				</tr>
+			<% end %>
+		<% else %>
+			<tr>
+				<td colspan="2" class="update">No releases to display.</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

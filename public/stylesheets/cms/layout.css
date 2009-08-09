@@ -1,0 +1,29 @@
+#page-body
+{
+	clear:both;
+	margin:0;
+	padding:1.5em .7em .7em .7em;
+}
+#cms_content
+{
+	position:absolute;
+	top:50px;
+	left:20%;
+	padding:0 1% 0 2%;
+	width:77%;
+}
+#cms_navigation
+{
+	position:absolute;
+	top:50px;
+	left:0;
+	width:20%;
+	
+}
+#footer
+{
+	clear:both;
+	background-color:#003;
+	color:#fff;
+	height:30px;
+}

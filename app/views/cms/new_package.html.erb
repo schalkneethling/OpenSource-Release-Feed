@@ -1,0 +1,26 @@
+<h1>Add A New Package</h1>
+<%= render :partial => 'components/notification' %>
+<%= error_messages_for 'package' %>
+<% form_for :package, :html => { :multipart => true, :id => 'newpackage'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Article Details</legend>
+		<label for="package_title">Title: (Required)</label><br />
+		<%= f.text_field :title, :class => 'required', :size => '70' %><br />
+		
+		<label for="package_lead">Package Lead: (Required)</label><br />
+		<%= f.text_area :lead, :class => 'required', :size => '70x5' %><br />
+		
+		<label for="package_detail">Package Details: (Required)</label><br />
+		<%= f.text_area :detail, :size => "70x10", :minlength => '50' %><br />
+		
+		<label for="package_tag">Package Tag: (Required)</label><br />
+		<%= f.text_field :tag, :class => 'required', :size => '70' %><br />
+		
+		<label for="package_logo">Logo: (Required)</label><br />
+		<%= f.file_field :logo %><br />
+		
+		<label for="package_download">Download: (Required)</label><br />
+		<%= f.file_field :download %><br />
+	</fieldset>
+	<%= submit_tag 'add package', :class => 'custom_button' %>
+<% end %>

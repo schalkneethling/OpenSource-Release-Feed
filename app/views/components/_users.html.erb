@@ -1,0 +1,13 @@
+<div id="osrf_users">
+	<%= image_tag "/images/icons/web_connected.png", :size => "71X71", :alt => "Web Connected Icons", :class => 'feed_icon' %>
+	<h3><a href="#user_list">OSRF USERS</a></h3>
+	<p class="user_list">
+	<% unless @users.empty? %>
+		<% @users.each do |u| %>
+			<%= image_tag u.gravatar_url, :size => '20x20', :class => 'gravatar', :alt => u.login %>
+		<% end %>
+	<% else %>
+	No users currently registered.
+	<% end %>
+	</p>
+</div>

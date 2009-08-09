@@ -1,0 +1,24 @@
+<h1>Add MetaData</h1>
+<%= render :partial => 'components/notification' %>
+<%= error_messages_for 'metadata' %>
+<% form_for :metadata, {:id => 'editcontent'} do |f| %>
+	<fieldset class="shaded_fieldset">
+		<legend>Add MetaData</legend>
+		<label for="metadata_title">Title: (Required)</label><br />
+		<%= f.text_field :title, :class => 'required', :size => '70' %><br />
+		
+		<label for="metadata_page">Page: (Required)</label><br />
+		<%= f.text_field :page, :class => 'required', :size => '70' %><br />
+		
+		<label for="metadata_content">Content:</label><br />
+		<%= f.text_area :content, :size => "70x3" %><br />
+		
+		<label for="metadata_keywords">Meta Tags: (Required)</label><br />
+		<%= f.text_area :keywords, :size => "70x3" %><br />
+		
+		<label for="metadata_description">Meta Description: (Required)</label><br />
+		<%= f.text_area :description, :size => "70x3" %><br />
+		
+		<%= submit_tag 'add metadata', :class => 'custom_button' %>
+	</fieldset>	
+<% end %>
